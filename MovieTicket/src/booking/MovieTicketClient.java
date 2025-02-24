@@ -1,11 +1,11 @@
 package booking;
 
-public class MovieTicketClient implements Runnable {
+public class MovieTicketClient extends Thread {
     private String customerName;
     private int ticketsToBook;
     private MovieTicketServer server;
 
-    MovieTicketClient(String customerName, int ticketsToBook, MovieTicketServer server) {
+    public MovieTicketClient(MovieTicketServer server, String customerName, int ticketsToBook) {
         this.customerName = customerName;
         this.ticketsToBook = ticketsToBook;
         this.server = server;
